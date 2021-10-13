@@ -174,6 +174,7 @@ const work = (num)=>{
         const button_edit = document.querySelector(`#tableRowTextEditTabs_tab_html_${num}`).childNodes[0].click()//pobieram przycisk
         let text_html = document.querySelector(`#tableRowTextEditTabs_container_html_area_${num}`)
         let text= text_html.value
+        let tmp_hold_text = text_html.value
         text_html.value = ''
         let ready_text = ``
         let tmp;
@@ -227,7 +228,7 @@ const work = (num)=>{
     text_html.value = ready_text;
     text_html.select();
     document.execCommand("copy")
-    text_html.value = ``;
+    text_html.value = tmp_hold_text;
     })
 }
 

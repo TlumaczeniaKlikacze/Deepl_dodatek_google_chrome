@@ -1,0 +1,17 @@
+{
+  "name": "DeeplEX",
+  "description": "DeeplEX - Czasem taniej to nawet lepiej !",
+  "version": "1.0",
+  "permissions": ["https://zooart5.yourtechnicaldomain.com/panel/product.php*","https://gattiliano.it/panel/product.php*", "tabs"],
+  "manifest_version": 2, 
+  "icons": {},
+  "browser_action": {   
+    "default_popup": "popup.html"  
+  }, 
+  "content_scripts": [  
+    {  
+        "matches": [ "https://zooart5.yourtechnicaldomain.com/panel/product.php*","https://gattiliano.it/panel/product.php*" ],  
+       "js": ["js.js"]  
+        }  
+    ]  
+}

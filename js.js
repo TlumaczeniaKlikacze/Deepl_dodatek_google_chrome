@@ -229,6 +229,7 @@ const work = (num)=>{
     text_html.select();
     document.execCommand("copy")
     text_html.value = tmp_hold_text;
+    document.querySelector(`#tableRowTextEditTabs_tab_preview_${num}`).childNodes[0].click()
     })
 }
 

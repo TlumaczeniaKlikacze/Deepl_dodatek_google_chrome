@@ -126,8 +126,8 @@ let db = [
     }
 
 ]
-const tags = ['span','div','h1','h2','h3','h4','h5','h6','section','article','aside','main',"img",'a',"head","meta","title","link"]
-const good_tags = ['p','strong','ul','li','table','tbody','tr','th','thead','td',"caption",'colgroup','col','tfoot','br']
+const tags = ['span','div','h1','h2','h3','h4','h5','h6','section','article','aside','main',"img",'a',"head","meta","title","small","link","big","body","center","dd","dl","dt","em","embed","font","form","hr","html","input","marquee","menu","option","strike"]
+    const good_tags = ['p','strong','ul','li','table','tbody','tr','th','thead','td',"caption",'colgroup','col','tfoot','br',"ol"]
 const interval = setInterval(() => {
     if(document.querySelector("#tableRowTextEditTabs_0")){
         clearInterval(interval)
@@ -181,35 +181,52 @@ const work = (num)=>{
         let tmp2
         let splitet_text = text.split('<')
         ready_text += splitet_text[0]
-        for(let _=0;_<splitet_text.length;_++){
+             for(let _=0;_<splitet_text.length;_++){
             if(_==splitet_text.length-1){
+          
                 tmp = splitet_text[_].split(">")
-                tmp2 = true;//true jest domyślne
-                for(let i__i=0;i__i<tags.length;i__i++){
-                    if(tmp[0] == tags[i__i] || tmp[0] == `/${tags[i__i]}`){
-                        //mamy tag
-                        tmp2 = false;
-                        ready_text+= `${tmp[1].trim()}`//sama wartosc
-                        break;
+                let test_tags = good_tags.find(e=> e == tmp2[0] ||e == `${tmp2[0].split('/')[1]}`)
+                let test2_tags = tags.find(e=> e == tmp2[0] ||e == `${tmp2[0].split('/')[1]}`)
+                if(test_tags ==undefined && test2_tags == undefined){
+                    if(tmp[1]!=undefined){
+                    ready_text += tmp[1]
+                    }
+                }else{
+                    tmp2 = true;//true jest domyślne
+                    for(let i__i=0;i__i<tags.length;i__i++){
+                        if(tmp[0] == tags[i__i] || tmp[0] == `/${tags[i__i]}`){
+                            //mamy tag
+                            tmp2 = false;
+                            ready_text+= `${tmp[1]}`//sama wartosc
+                            break;
+                        }
+                    }
+                    if(tmp2){
+                        ready_text+=`<${splitet_text[_]}`
                     }
                 }
-                if(tmp2){
-                    ready_text+=`<${splitet_text[_]}`
-                }
+             
     
             }else if(_!=splitet_text.length-1){
                 tmp = splitet_text[_].split(">")
                 tmp2= tmp[0].split(' ')
-                if(tmp[1] != undefined){
+                let test_tags = good_tags.find(e=> e == tmp2[0] ||e == `${tmp2[0].split('/')[1]}`)
+                let test2_tags = tags.find(e=> e == tmp2[0] ||e == `${tmp2[0].split('/')[1]}`)
+                if(test_tags ==undefined && test2_tags == undefined){
+                    if(tmp[1]!=undefined){
+                    ready_text += tmp[1]
+
+                    }
+                }else if(tmp[1] != undefined){
                     for(let __ =0;__<tags.length;__++){
                         if(tmp2[0] == tags[__] || tmp2[0] == `/${tags[__]}`){
                             if(tmp[1].trim() != undefined){
                                 if(tmp2[0] == "h1" || tmp2[0] == "h2"|| tmp2[0] == "h3" || tmp2[0] == "h4" || tmp2[0] == "h5"|| tmp2[0] == "h6"){
-                                    ready_text +=`<strong>${tmp[1].trim()}`
+                                    ready_text +=`<strong>${tmp[1]}`
                                 }else if(tmp2[0] == "/h1" || tmp2[0] == "/h2"|| tmp2[0] == "/h3" || tmp2[0] == "/h4" || tmp2[0] == "/h5"|| tmp2[0] == "/h6"){
-                                    ready_text +=`</strong>${tmp[1].trim()}`
+                                    ready_text +=`</strong>${tmp[1]}`
                                 }else{
-                                    ready_text +=tmp[1].trim()
+                                    ready_text +=tmp[1]
                                 }
                             }
                             break;
@@ -219,11 +236,11 @@ const work = (num)=>{
                         if(tmp2[0] == good_tags[___] || tmp2[0] == `/${good_tags[___]}`){
 
                            if(tmp2[0][0] == '/'){
-                            ready_text += `<${tmp2[0].trim()}>${tmp[1].trim()}`
+                            ready_text += `<${tmp2[0].trim()}>${tmp[1]}`
                          
 
                            }else{
-                            ready_text += `<${tmp2[0].trim()}>${tmp[1].trim()}`
+                            ready_text += `<${tmp2[0]}>${tmp[1].trim()}`
                            }
                             break;
                         }

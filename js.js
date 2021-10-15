@@ -189,7 +189,7 @@ const work = (num)=>{
                     if(tmp[0] == tags[i__i] || tmp[0] == `/${tags[i__i]}`){
                         //mamy tag
                         tmp2 = false;
-                        ready_text+= `${tmp[1]}`//sama wartosc
+                        ready_text+= `${tmp[1].trim()}`//sama wartosc
                         break;
                     }
                 }

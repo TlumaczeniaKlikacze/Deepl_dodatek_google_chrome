@@ -205,11 +205,11 @@ const work = (num)=>{
                         if(tmp2[0] == tags[__] || tmp2[0] == `/${tags[__]}`){
                             if(tmp[1].trim() != undefined){
                                 if(tmp2[0] == "h1" || tmp2[0] == "h2"|| tmp2[0] == "h3" || tmp2[0] == "h4" || tmp2[0] == "h5"|| tmp2[0] == "h6"){
-                                    ready_text +=`<strong>${tmp[1]}`
+                                    ready_text +=`<strong>${tmp[1].trim()}`
                                 }else if(tmp2[0] == "/h1" || tmp2[0] == "/h2"|| tmp2[0] == "/h3" || tmp2[0] == "/h4" || tmp2[0] == "/h5"|| tmp2[0] == "/h6"){
-                                    ready_text +=`</strong>${tmp[1]}`
+                                    ready_text +=`</strong>${tmp[1].trim()}`
                                 }else{
-                                    ready_text +=tmp[1]
+                                    ready_text +=tmp[1].trim()
                                 }
                             }
                             break;
@@ -219,11 +219,11 @@ const work = (num)=>{
                         if(tmp2[0] == good_tags[___] || tmp2[0] == `/${good_tags[___]}`){
 
                            if(tmp2[0][0] == '/'){
-                            ready_text += `<${tmp2[0].trim()}>${tmp[1]}`
+                            ready_text += `<${tmp2[0].trim()}>${tmp[1].trim()}`
                          
 
                            }else{
-                            ready_text += `<${tmp2[0]}>${tmp[1].trim()}`
+                            ready_text += `<${tmp2[0].trim()}>${tmp[1].trim()}`
                            }
                             break;
                         }

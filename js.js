@@ -49,7 +49,7 @@ let db = [
     },
     {
         original:'<col>',
-        for_deepl:'|lh#|'
+        for_deepl:'|l%h#|'
     },
     {
         original:'<tfoot>',

@@ -157,13 +157,16 @@ const work = (num)=>{
     document.querySelector(`#Deepl_reverse_tag_${num}`).addEventListener("click",()=>{
         let text_html = document.querySelector(`#tableRowTextEditTabs_container_html_area_${num}`)
         let text = text_html.value;
-        const req_exp = new RegExp('|',g)
-        text = text.replace(req_exp,'')
+        while(text.includes('|')){
+            text = text.replace('|',"")
+        }
         for(let _=0;_<db.length;_++){
             //zamieniam tagi na inne tagi lol xd
-            if(text.includes((db[_].for_deepl.replace(req_exp,'')))){
+            let cleared = db[_].for_deepl.replace('|','')
+            cleared= cleared.replace('|','')
+            if(text.includes(cleared)){
                 //jesli zawiera w sobie
-                text = text.replace(new RegExp(`${db[_].for_deepl}`,'g'),`\n${db[_].original}\n`)
+                text = text.replace(new RegExp(`${cleared}`,'g'),`\n${db[_].original}\n`)
             }
         }
         text_html.value = text;

@@ -9,71 +9,71 @@ let db = [
     },
     {
         original:'<ul>',
-        for_deepl:'|!p@#!|'
+        for_deepl:'|!p1@#!|'
     },
     {
         original:'<li>',
-        for_deepl:'|!xxx!|'
+        for_deepl:'|!x2x4x!|'
     },
     {
         original:'<table>',
-        for_deepl:'|!tx!|'
+        for_deepl:'|!t@4x!|'
     },
     {
         original:'<tbody>',
-        for_deepl:'|!xtx!|'
+        for_deepl:'|!x!t6x!|'
     },
     {
         original:'<tr>',
-        for_deepl:'|!xt!x!|'
+        for_deepl:'|!x5t!1x!|'
     },
     {
         original:'<th>',
-        for_deepl:'|!q!t!x!|'
+        for_deepl:'|!q3!t!2x!|'
     },
     {
         original:'<thead>',
-        for_deepl:'|!q!t!|'
+        for_deepl:'|!q1!3t!|'
     },
     {
         original:'<td>',
-        for_deepl:'|!o!|'
+        for_deepl:'|!0o2!|'
     },
     {
         original:'<caption>',
-        for_deepl:'|@!xe!|'
+        for_deepl:'|@!#x5e!|'
     },
     {
         original:'<colgroup>',
-        for_deepl:'|!df!|'
+        for_deepl:'|!#d#f!|'
     },
     {
         original:'<col>',
-        for_deepl:'|!l!|'
+        for_deepl:'|!lh!#|'
     },
     {
         original:'<tfoot>',
-        for_deepl:'|!t!|'
+        for_deepl:'|!t^!|'
     },
     {
         original:'<br>',
-        for_deepl:'|!b!|'
+        for_deepl:'|!5b@!|'
     },
     {
         original:'<br/>',
-        for_deepl:'|!bx!e!|'
+        for_deepl:'|!b2x!e!|'
     },
     {
         original:'</br>',
-        for_deepl:'|!b!de!|'
+        for_deepl:'|!b!d1e!|'
     },
     {
         original:'</p>',
-        for_deepl:'|!q!d!|'
+        for_deepl:'|!q4!d3!|'
     },
     {
         original:'</strong>',
-        for_deepl:'|!j!|'
+        for_deepl:'|!@j%!|'
     },
     {
         original:'</ul>',
@@ -81,48 +81,48 @@ let db = [
     },
     {
         original:'</li>',
-        for_deepl:'|!xx!x!|'
+        for_deepl:'|!x@3x!x2!|'
     },
     {
         original:'</table>',
-        for_deepl:'|!t!x!|'
+        for_deepl:'|!40!x@!|'
     },
     {
         original:'</tbody>',
-        for_deepl:'|!x!tx!|'
+        for_deepl:'|!3!tx!|'
     },
     {
         original:'</tr>',
-        for_deepl:'|!x!t!x!|'
+        for_deepl:'|!x1t!1!|'
     },
     {
         original:'</th>',
-        for_deepl:'|!q!t!q!|'
+        for_deepl:'|!q!2w3q!|'
     },
     {
         original:'</thead>',
-        for_deepl:'|!q!q!|'
+        for_deepl:'|!q5!&q!|'
     },
     {
         original:'</td>',
-        for_deepl:'|!w!|'
+        for_deepl:'|!6w&!|'
     },
     {
         original:'</caption>',
-        for_deepl:'|@!ie!|'
+        for_deepl:'|@!&ie!|'
     },
     {
         original:'</colgroup>',
-        for_deepl:'|!a!f!|'
+        for_deepl:'|!a#!&f!|'
     },{
         original:'</col>',
-        for_deepl:'|!n!|'
+        for_deepl:'|!#n3!|'
     },{
         original:'</tfoot>',
-        for_deepl:'|!c!|'
+        for_deepl:'|!c2f3!|'
     },{
         original:'</br>',
-        for_deepl:'|!k!|'
+        for_deepl:'|!#k6!|'
     }
 
 ]

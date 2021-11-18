@@ -1,128 +1,128 @@
 let db = [
     {
         original:'<p>',
-        for_deepl:'/!x!d!/'
+        for_deepl:'|!x!d!|'
     },
     {
         original:'<strong>',
-        for_deepl:'/!f!/'
+        for_deepl:'|!f!|'
     },
     {
         original:'<ul>',
-        for_deepl:'/!p@#!/'
+        for_deepl:'|!p@#!|'
     },
     {
         original:'<li>',
-        for_deepl:'/!xxx!/'
+        for_deepl:'|!xxx!|'
     },
     {
         original:'<table>',
-        for_deepl:'/!tx!/'
+        for_deepl:'|!tx!|'
     },
     {
         original:'<tbody>',
-        for_deepl:'/!xtx!/'
+        for_deepl:'|!xtx!|'
     },
     {
         original:'<tr>',
-        for_deepl:'/!xt!x!/'
+        for_deepl:'|!xt!x!|'
     },
     {
         original:'<th>',
-        for_deepl:'/!q!t!x!/'
+        for_deepl:'|!q!t!x!|'
     },
     {
         original:'<thead>',
-        for_deepl:'/!q!t!/'
+        for_deepl:'|!q!t!|'
     },
     {
         original:'<td>',
-        for_deepl:'/!o!/'
+        for_deepl:'|!o!|'
     },
     {
         original:'<caption>',
-        for_deepl:'/@!xe!/'
+        for_deepl:'|@!xe!|'
     },
     {
         original:'<colgroup>',
-        for_deepl:'/!df!/'
+        for_deepl:'|!df!|'
     },
     {
         original:'<col>',
-        for_deepl:'/!l!/'
+        for_deepl:'|!l!|'
     },
     {
         original:'<tfoot>',
-        for_deepl:'/!t!/'
+        for_deepl:'|!t!|'
     },
     {
         original:'<br>',
-        for_deepl:'/!b!/'
+        for_deepl:'|!b!|'
     },
     {
         original:'<br/>',
-        for_deepl:'/!bx!e!/'
+        for_deepl:'|!bx!e!|'
     },
     {
         original:'</br>',
-        for_deepl:'/!b!de!/'
+        for_deepl:'|!b!de!|'
     },
     {
         original:'</p>',
-        for_deepl:'/!q!d!/'
+        for_deepl:'|!q!d!|'
     },
     {
         original:'</strong>',
-        for_deepl:'/!j!/'
+        for_deepl:'|!j!|'
     },
     {
         original:'</ul>',
-        for_deepl:'/!z@#!/'
+        for_deepl:'|!z@#!|'
     },
     {
         original:'</li>',
-        for_deepl:'/!xx!x!/'
+        for_deepl:'|!xx!x!|'
     },
     {
         original:'</table>',
-        for_deepl:'/!t!x!/'
+        for_deepl:'|!t!x!|'
     },
     {
         original:'</tbody>',
-        for_deepl:'/!x!tx!/'
+        for_deepl:'|!x!tx!|'
     },
     {
         original:'</tr>',
-        for_deepl:'/!x!t!x!/'
+        for_deepl:'|!x!t!x!|'
     },
     {
         original:'</th>',
-        for_deepl:'/!q!t!q!/'
+        for_deepl:'|!q!t!q!|'
     },
     {
         original:'</thead>',
-        for_deepl:'/!q!q!/'
+        for_deepl:'|!q!q!|'
     },
     {
         original:'</td>',
-        for_deepl:'/!w!/'
+        for_deepl:'|!w!|'
     },
     {
         original:'</caption>',
-        for_deepl:'/@!ie!/'
+        for_deepl:'|@!ie!|'
     },
     {
         original:'</colgroup>',
-        for_deepl:'/!a!f!/'
+        for_deepl:'|!a!f!|'
     },{
         original:'</col>',
-        for_deepl:'/!n!/'
+        for_deepl:'|!n!|'
     },{
         original:'</tfoot>',
-        for_deepl:'/!c!/'
+        for_deepl:'|!c!|'
     },{
         original:'</br>',
-        for_deepl:'/!k!/'
+        for_deepl:'|!k!|'
     }
 
 ]
@@ -140,7 +140,6 @@ const interval = setInterval(() => {
 
 
 }, 200);
-
 const work = (num)=>{
     const container = document.querySelector(`#tableRowTextEditTabs_${num}`).childNodes[1]
     const el = document.createElement('li')
@@ -158,9 +157,11 @@ const work = (num)=>{
     document.querySelector(`#Deepl_reverse_tag_${num}`).addEventListener("click",()=>{
         let text_html = document.querySelector(`#tableRowTextEditTabs_container_html_area_${num}`)
         let text = text_html.value;
+        const req_exp = new RegExp('|',g)
+        text = text.replace(req_exp,'')
         for(let _=0;_<db.length;_++){
             //zamieniam tagi na inne tagi lol xd
-            if(text.includes(db[_].for_deepl)){
+            if(text.includes((db[_].for_deepl.replace(req_exp,'')))){
                 //jesli zawiera w sobie
                 text = text.replace(new RegExp(`${db[_].for_deepl}`,'g'),`\n${db[_].original}\n`)
             }

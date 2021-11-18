@@ -1,7 +1,7 @@
 let db = [
     {
         original:'<p>',
-        for_deepl:'|x$2d4@|'
+        for_deepl:'|q4d5|'
     },
     {
         original:'<strong>',

@@ -69,7 +69,7 @@ let db = [
     },
     {
         original:'</p>',
-        for_deepl:'|q4d3|'
+        for_deepl:'|4d3d2|'
     },
     {
         original:'</strong>',

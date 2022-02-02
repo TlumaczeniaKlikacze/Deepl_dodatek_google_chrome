@@ -21,11 +21,11 @@ let db = [
     },
     {
         original:'<tbody>',
-        for_deepl:'|xt6x|'
+        for_deepl:'|9t6x|'
     },
     {
         original:'<tr>',
-        for_deepl:'|x5t1x|'
+        for_deepl:'|75t1x|'
     },
     {
         original:'<th>',
